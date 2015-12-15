@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.potato.hot.hatly.ProfileActivity">
+
+
+    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/edit_button"-->
+        <!--android:weightSum="1"-->
+        <!--android:layout_alignParentBottom="true">-->
+        <!--<fragment-->
+            <!--android:name="com.potato.hot.hatly.PostFragment"-->
+            <!--android:id="@+id/createPost"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--tools:layout="@layout/fragment_post" />-->
+        <!--<fragment-->
+            <!--android:name="com.potato.hot.hatly.ViewPostFragment"-->
+            <!--android:id="@+id/viewPost"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="54dp"-->
+            <!--tools:layout="@layout/fragment_view_post" />-->
+        <!--<fragment-->
+            <!--android:name="com.potato.hot.hatly.ListCommentFragment"-->
+            <!--android:id="@+id/viewComments"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="140dp"-->
+            <!--tools:layout="@layout/fragment_comment" />-->
+    <!--</LinearLayout>-->
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="JonDoe"
+                android:id="@+id/profile_name"
+                android:layout_alignTop="@+id/textView"
+                android:layout_toRightOf="@+id/textView3"
+                android:layout_toEndOf="@+id/textView3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Male"
+                android:id="@+id/profile_gender"
+                android:layout_alignTop="@+id/textView4"
+                android:layout_alignLeft="@+id/profile_bd"
+                android:layout_alignStart="@+id/profile_bd" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="bd"
+                android:id="@+id/profile_bd"
+                android:layout_alignTop="@+id/textView3"
+                android:layout_alignRight="@+id/profile_email"
+                android:layout_alignEnd="@+id/profile_email" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Gender:"
+                android:id="@+id/textView4"
+                android:textColor="#000000"
+                android:layout_below="@+id/textView3"
+                android:layout_alignLeft="@+id/textView3"
+                android:layout_alignStart="@+id/textView3"
+                android:layout_marginTop="27dp" />
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/textView4">
+                <!--<fragment-->
+                <!--android:name="com.potato.hot.hatly.PostFragment"-->
+                <!--android:id="@+id/createPost"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--tools:layout="@layout/fragment_post" />-->
+                <!--<fragment-->
+                <!--android:name="com.potato.hot.hatly.ViewPostFragment"-->
+                <!--android:id="@+id/viewPost"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="54dp"-->
+                <!--tools:layout="@layout/fragment_view_post"-->
+                <!--android:layout_weight="0.19" />-->
+                <!--<fragment-->
+                <!--android:name="com.potato.hot.hatly.ListCommentFragment"-->
+                <!--android:id="@+id/viewComments"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="140dp"-->
+                <!--tools:layout="@layout/fragment_comment"-->
+                <!--android:layout_weight="0.15" />-->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView android:id="@+id/postAuthor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@android:style/TextAppearance.Medium"
+                        android:foreground="#2c4940"
+                        android:text="@string/post_author"
+                        android:visibility="visible"
+                        android:background="#ffffff"
+                        /></FrameLayout>
+                <TextView
+                    android:id="@+id/post_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:text="@string/view_post_fragment" />
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|top"
+                    android:visibility="visible"
+                    android:focusableInTouchMode="false"
+                    android:background="#8ea49e">
+
+                    <EditText
+                        android:id="@+id/post_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="37dp"
+                        android:text="@string/posttext"
+                        android:layout_gravity="center"
+                        android:visibility="visible"
+                        android:background="#ffffff"
+                        android:editable="true"
+                        android:inputType="textLongMessage"/>
+
+                    <Button
+                        android:id="@+id/post_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:text="@string/button"
+                        android:layout_gravity="right|center_vertical"
+                        android:backgroundTint="#2c4940"
+                        android:foregroundTint="#f8f5f5"
+                        android:textColor="#ffffff" />
+                </FrameLayout>
+
+
+                <Space
+                    android:layout_width="38dp"
+                    android:layout_height="44dp"
+                    android:layout_gravity="center_horizontal|top" />
+
+                <FrameLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ffffff"
+                    android:id="@+id/relativeLayout3"
+                    android:layout_gravity="center_horizontal|top">
+
+                    <!-- the title view -->
+                    <TextView android:id="@+id/pAuthor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@android:style/TextAppearance.Medium"
+                        android:foreground="#2c4940"
+                        android:visibility="visible"
+                        android:background="#ffffff" />
+
+                    <!-- the description view -->
+                    <TextView android:id="@+id/comment"
+                        android:layout_below="@id/pAuthor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:textAppearance="@android:style/TextAppearance.Small"
+                        android:foreground="#030202" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="82dp"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:visibility="visible"
+                    android:focusableInTouchMode="false"
+                    android:background="#8ea49e"
+                    >
+                    <EditText
+                        android:id="@+id/post_comment"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:text="@string/postcomment"
+                        android:layout_gravity="center"
+                        android:visibility="visible"
+                        android:background="#ffffff"
+                        android:editable="true"
+                        android:inputType="textLongMessage"/>
+
+                    <Button
+                        android:id="@+id/comment_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:text="@string/cmbutton"
+                        android:layout_gravity="right|center_vertical"
+                        android:backgroundTint="#2c4940"
+                        android:foregroundTint="#f8f5f5"
+                        android:textColor="#ffffff" />
+
+                </FrameLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:minHeight="200dp"
+                android:nestedScrollingEnabled="false"
+                android:background="#e0e0e0"
+                android:id="@+id/relativeLayout"
+                android:touchscreenBlocksFocus="false"
+                android:paddingBottom="5dp"
+                android:paddingTop="10dp"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="John Doe"
+                    android:id="@+id/profilename"
+                    android:textStyle="bold"
+                    android:textSize="13pt"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp" />
+
+                <!--<de.hdodenhof.circleimageview.CircleImageView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:id="@+id/view"-->
+                    <!--android:src="@drawable/backf"-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_alignParentStart="true" />-->
+                <com.facebook.login.widget.ProfilePictureView
+                    android:id="@+id/imageMain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|top"
+                    android:layout_below="@+id/profilename"
+                    android:layout_alignRight="@+id/profilename"
+                    android:layout_alignEnd="@+id/profilename"
+                    android:layout_alignLeft="@+id/profilename"
+                    android:layout_alignStart="@+id/profilename" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="20 followers"
+                    android:id="@+id/followers_count"
+                    android:clickable="true"
+                    android:onClick="goToFollowers"
+                    android:layout_below="@+id/imageMain"
+                    android:layout_toStartOf="@+id/imageMain"
+                    android:layout_toLeftOf="@+id/imageMain"
+                    android:contextClickable="false"
+                    android:gravity="fill_horizontal|center_vertical" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="50 following"
+                    android:id="@+id/followings_count"
+                    android:clickable="true"
+                    android:onClick="goToFollowing"
+                    android:layout_alignTop="@+id/followers_count"
+                    android:layout_toEndOf="@+id/imageMain"
+                    android:layout_toRightOf="@+id/imageMain"
+                    android:gravity="center_vertical|center_horizontal" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayout"
+                android:layout_centerHorizontal="true"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:id="@+id/relativeLayout2">
+            </RelativeLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="edit info"
+                android:id="@+id/edit_button"
+                android:background="@android:color/holo_blue_dark"
+                android:clickable="true"
+                android:onClick="editClick"
+                android:layout_alignTop="@+id/profile_email"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Name:"
+                android:id="@+id/textView"
+                android:layout_below="@+id/relativeLayout2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="27dp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Email: "
+                android:id="@+id/textView2"
+                android:layout_below="@+id/textView"
+                android:layout_alignLeft="@+id/textView"
+                android:layout_alignStart="@+id/textView"
+                android:layout_marginTop="26dp"
+                android:textColor="#030202" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Email"
+                android:id="@+id/profile_email"
+                android:layout_alignTop="@+id/textView2"
+                android:layout_toRightOf="@+id/textView3"
+                android:layout_toEndOf="@+id/textView3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Birthday:"
+                android:id="@+id/textView3"
+                android:layout_below="@+id/textView2"
+                android:layout_alignLeft="@+id/textView2"
+                android:layout_alignStart="@+id/textView2"
+                android:layout_marginTop="28dp"
+                android:textColor="#000000" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

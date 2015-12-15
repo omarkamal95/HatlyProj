@@ -1,0 +1,39 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.potato.hot.hatly.PostFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:visibility="visible"
+        android:focusableInTouchMode="false"
+        android:background="#8ea49e">
+
+        <TextView
+            android:id="@+id/post_text"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:text="@string/posttext"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            android:background="#ffffff" />
+
+        <Button
+            android:id="@+id/post_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="@string/button"
+            android:layout_gravity="right|center_vertical"
+            android:backgroundTint="#2c4940"
+            android:foregroundTint="#f8f5f5"
+            android:textColor="#ffffff" />
+    </FrameLayout>
+
+</FrameLayout>
