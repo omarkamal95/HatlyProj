@@ -9,13 +9,29 @@ class Api::PostsController < Api::BaseController
 
   def show
     @post = Post.find(params[:id]).to_json(:include => [:user, :comments])
-    respond_with @post
+    if @post
+      respond_with @post
+    else
+      render nothing: true, status: :bad_request
+    end
   end
 
   def create
-    @posts = Post.new(text: params[:text], post_type: params[:post_type], user_id: params[:user_id], location: params[:location])
+    @post = Post.new(text: params[:text], post_type: params[:post_type], user_id: params[:user_id], location: params[:location])
+      if @post.save
+          render json: @post, status: :created
+      else
+        render nothing: true, status: :bad_request
+      end
+  end
 
-    respond_with @posts
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.destroy
+      render json: @post, status: :deleted
+    else
+      render nothing: true, status: :bad_request
+    end
   end
 
 

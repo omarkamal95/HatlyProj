@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20151215183605) do
   add_index "items", ["post_id"], name: "index_items_on_post_id"
 
   create_table "posts", force: :cascade do |t|
-    t.integer  "type",       null: false
+    t.integer  "post_type",  null: false
     t.text     "text",       null: false
     t.string   "location",   null: false
     t.integer  "user_id"
