@@ -6,5 +6,5 @@ class Post < ActiveRecord::Base
 
 	validates :text, :presence => true
 
-	scope :recent_posts, -> { where("created_at >= ?", (Time.zone.now - 24.hours).to_s(:db)) }
+	scope :recent_posts, -> { where("created_at <= ?", (Time.zone.now - 24.hours).to_s(:db)) }
 end
