@@ -14,6 +14,15 @@ public class User {
     private String password;
     private ArrayList<User> followers;
     private ArrayList<User> following;
+    private String imageUrl;
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
     public ArrayList<User> getFollowers() {
         return followers;

@@ -64,6 +64,10 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
         info = (TextView)findViewById(R.id.info);
+        if(isLoggedIn()){
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
+        }
         loginButton = (LoginButton)findViewById(R.id.login_button);
 
         loginButton.setReadPermissions(Arrays.asList("public_profile, email, user_birthday, user_friends"));
@@ -204,4 +208,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public boolean isLoggedIn() {
+        AccessToken accessToken = AccessToken.getCurrentAccessToken();
+        return accessToken != null;
+    }
 }
