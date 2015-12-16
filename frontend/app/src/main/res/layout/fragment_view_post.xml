@@ -1,25 +1,166 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context="com.potato.hot.hatly.ViewPostFragment"
     android:orientation="vertical"
     android:weightSum="1">
 
-    <TextView android:id="@+id/postAuthor"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="@android:style/TextAppearance.Medium"
-        android:foreground="#2c4940"
-        android:text="@string/post_author"
-        android:visibility="visible"
-        android:background="#ffffff"
-        />
-    <TextView
-        android:id="@+id/post_view"
-        android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:text="@string/view_post_fragment" />
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="143dp"
+        android:background="#ffffff"
+        android:layout_weight="0.01">
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#c0c0c0"
+            android:id="@+id/view3"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#c0c0c0"
+            android:id="@+id/view2"
+            android:layout_alignLeft="@+id/imageButton"
+            android:layout_alignStart="@+id/imageButton" />
+
+        <TextView
+            android:id="@+id/post_view"
+            android:layout_width="286dp"
+            android:layout_height="wrap_content"
+            android:text="@string/view_post_fragment"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            android:background="#ffffff"
+            android:editable="false"
+            android:elegantTextHeight="true"
+            android:singleLine="false"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/space2"
+            android:layout_toEndOf="@+id/space2" />
+
+        <Space
+            android:layout_width="30px"
+            android:layout_height="20px"
+            android:id="@+id/space2"
+            android:layout_alignBottom="@+id/imageButton"
+            android:layout_toRightOf="@+id/imageButton"
+            android:layout_toEndOf="@+id/imageButton" />
+
+        <ImageButton
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/imageButton"
+            android:layout_gravity="left|top"
+            android:layout_toRightOf="@+id/space"
+            />
+
+        <Space
+            android:layout_width="20px"
+            android:layout_height="20px"
+            android:layout_alignTop="@+id/imageButton"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/space" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText"
+            android:text="Author"
+            android:textSize="15dp"
+            android:layout_above="@+id/post_view"
+            android:layout_toRightOf="@+id/imageButton"
+            android:layout_toEndOf="@+id/imageButton"
+            android:contextClickable="true"
+            android:capitalize="words" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:background="#ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/post_comment_button"
+        android:layout_alignEnd="@+id/post_comment_button">
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#c0c0c0"
+            android:id="@+id/view4"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/imageButton2"
+            android:layout_alignStart="@+id/imageButton2" />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#c0c0c0"
+            android:id="@+id/view5"
+            android:layout_above="@+id/post_text"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:id="@+id/post_button"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:text="@string/cm_button"
+            android:layout_gravity="right|bottom"
+            android:backgroundTint="#6f7372"
+            android:foregroundTint="#f8f5f5"
+            android:textColor="#ffffff"
+            android:layout_row="16"
+            android:layout_column="21"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/post_comment"
+            android:layout_width="286dp"
+            android:layout_height="50dp"
+            android:text="@string/comment_text"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            android:background="#ffffff"
+            android:editable="true"
+            android:elegantTextHeight="true"
+            android:singleLine="false"
+            android:layout_above="@+id/view4"
+            android:layout_toRightOf="@+id/space4"
+            android:layout_toEndOf="@+id/space4"
+            android:capitalize="sentences" />
+
+        <Space
+            android:layout_width="30px"
+            android:layout_height="20px"
+            android:id="@+id/space4"
+            android:layout_alignBottom="@+id/imageButton2"
+            android:layout_toRightOf="@+id/imageButton2"
+            android:layout_toEndOf="@+id/imageButton2" />
+
+        <ImageButton
+            android:layout_width="54dp"
+            android:layout_height="45dp"
+            android:id="@+id/imageButton2"
+            android:layout_gravity="start|top"
+            android:layout_toRightOf="@+id/space3"
+            android:layout_toEndOf="@+id/space3" />
+
+        <Space
+            android:layout_width="20px"
+            android:layout_height="20px"
+            android:layout_alignTop="@+id/imageButton2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/space3" />
+    </RelativeLayout>
 
 </LinearLayout>
