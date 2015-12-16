@@ -6,34 +6,85 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="105dp"
         android:layout_gravity="center_horizontal|top"
-        android:visibility="visible"
-        android:focusableInTouchMode="false"
-        android:background="#8ea49e">
+        android:background="#ffffff">
 
-        <TextView
-            android:id="@+id/post_text"
-            android:layout_width="match_parent"
-            android:layout_height="37dp"
-            android:text="@string/posttext"
-            android:layout_gravity="center"
-            android:visibility="visible"
-            android:background="#ffffff" />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#c0c0c0"
+            android:id="@+id/view3"
+            android:layout_alignTop="@+id/post_button"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#c0c0c0"
+            android:id="@+id/view2"
+            android:layout_above="@+id/post_text"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <Button
             android:id="@+id/post_button"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
+            android:layout_height="35dp"
             android:text="@string/button"
-            android:layout_gravity="right|center_vertical"
-            android:backgroundTint="#2c4940"
+            android:layout_gravity="right|bottom"
+            android:backgroundTint="#6f7372"
             android:foregroundTint="#f8f5f5"
-            android:textColor="#ffffff" />
-    </FrameLayout>
+            android:textColor="#ffffff"
+            android:layout_row="16"
+            android:layout_column="21"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/post_text"
+            android:layout_width="286dp"
+            android:layout_height="50dp"
+            android:text="@string/post_text"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            android:background="#ffffff"
+            android:editable="true"
+            android:elegantTextHeight="true"
+            android:shadowColor="#999999"
+            android:singleLine="false"
+            android:layout_above="@+id/view3"
+            android:layout_toRightOf="@+id/space2"
+            android:layout_toEndOf="@+id/space2"
+            android:capitalize="sentences" />
+
+        <Space
+            android:layout_width="30px"
+            android:layout_height="20px"
+            android:id="@+id/space2"
+            android:layout_alignBottom="@+id/imageButton"
+            android:layout_toRightOf="@+id/imageButton"
+            android:layout_toEndOf="@+id/imageButton" />
+
+        <ImageButton
+            android:layout_width="54dp"
+            android:layout_height="45dp"
+            android:id="@+id/imageButton"
+            android:layout_gravity="left|top"
+            android:layout_alignTop="@+id/post_text"
+            android:layout_toRightOf="@+id/space"
+            android:layout_toEndOf="@+id/space" />
+
+        <Space
+            android:layout_width="20px"
+            android:layout_height="20px"
+            android:layout_alignTop="@+id/imageButton"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/space" />
+    </RelativeLayout>
 
 </FrameLayout>
