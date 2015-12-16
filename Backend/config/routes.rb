@@ -2,10 +2,19 @@ Rails.application.routes.draw do
 
 
 
+  
   namespace :api, defaults: {format: :json} do
+     resources :users, only: [:index, :show, :create] do
+       member do
+         post 'follow' => 'friendships#follow'
+         get 'follow' => 'friendships#followList'
+       end
+     end
+
       resources :posts do
         resources :comments, only: [:index, :create]
       end
+
 
 
   end
